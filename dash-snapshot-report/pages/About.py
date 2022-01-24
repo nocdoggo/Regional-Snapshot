@@ -6,7 +6,7 @@ from utils import Header
 
 
 def create_layout(app, region, region_code, view_style):
-    pageID = 6
+    pageID = 7
 
     return html.Div(
         [

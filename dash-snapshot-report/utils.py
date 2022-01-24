@@ -5,8 +5,8 @@ def Header(app, region, view_style, pageID):
 
     # This is a really dumb way to do the tab selection highlighting.
     # Since it did not really add the html.Strong(). so, left something else for desire!
-    HighLight = ["#000000", "#000000", "#000000", "#000000", "#000000", "#000000"]
-    BGColor   = ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff"]
+    HighLight = ["#000000", "#000000", "#000000", "#000000", "#000000", "#000000", "#000000"]
+    BGColor   = ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff"]
     HighLight[pageID - 1] = "#97151c"
     BGColor[pageID - 1] = "#ffffff"
     # BGColor[pageID - 1] = "#fcfdc9"
@@ -160,23 +160,29 @@ def get_menu(HighLight, BGColor, pageID):
                     className="tab"
                 ),
                 dcc.Link(
-                    ("Demographics"),style={"color": HighLight[2],"background-color": BGColor[2]},
+                    ("Homevisiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    href="/dash-snapshot-report/homevisiting",
+                    className="tab",
+                    id='tab'
+                ),
+                dcc.Link(
+                    ("Demographics"),style={"color": HighLight[3],"background-color": BGColor[3]},
                     href="/dash-snapshot-report/demographic",
                     className="tab",
                     id='demoButton'
                 ),
                 dcc.Link(
-                    ("Language & Family"),style={"color": HighLight[3],"background-color": BGColor[3]},
+                    ("Language & Family"),style={"color": HighLight[4],"background-color": BGColor[4]},
                     href="/dash-snapshot-report/language-family",
                     className="tab",
                 ),
                 dcc.Link(
-                    ("Race/Ethnicity"),style={"color": HighLight[4],"background-color": BGColor[4]},
+                    ("Race/Ethnicity"),style={"color": HighLight[5],"background-color": BGColor[5]},
                     href="/dash-snapshot-report/race",
                     className="tab",
                 ),
                 dcc.Link(
-                    ("About"),style={"color": HighLight[5],"background-color": BGColor[5]},
+                    ("About"),style={"color": HighLight[6],"background-color": BGColor[6]},
                     href="/dash-snapshot-report/about",
                     className="tab",
                 ),
@@ -197,23 +203,29 @@ def get_menu(HighLight, BGColor, pageID):
                     className="tab"
                 ),
                 dcc.Link(
-                    ("Demographics"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    ("Homevisiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    href="/dash-snapshot-report/homevisiting",
+                    className="tab",
+                    id='tab'
+                ),
+                dcc.Link(
+                    ("Demographics"), style={"color": HighLight[3], "background-color": BGColor[3]},
                     href="/dash-snapshot-report/demographic",
                     className="tab",
                     id='demoButton'
                 ),
                 dcc.Link(
-                    ("Language & Family"), style={"color": HighLight[3], "background-color": BGColor[3]},
+                    ("Language & Family"), style={"color": HighLight[4], "background-color": BGColor[4]},
                     href="/dash-snapshot-report/language-family",
                     className="tab",
                 ),
                 dcc.Link(
-                    ("Race/Ethnicity"), style={"color": HighLight[4], "background-color": BGColor[4]},
+                    ("Race/Ethnicity"), style={"color": HighLight[5], "background-color": BGColor[5]},
                     href="/dash-snapshot-report/race",
                     className="tab",
                 ),
                 dcc.Link(
-                    ("About"), style={"color": HighLight[5], "background-color": BGColor[5]},
+                    ("About"), style={"color": HighLight[6], "background-color": BGColor[6]},
                     href="/dash-snapshot-report/about",
                     className="tab",
                 ),
@@ -229,28 +241,35 @@ def get_menu(HighLight, BGColor, pageID):
                     className="tab first",
                 ),
                 dcc.Link(
-                    ("Early Care and Education"), style={"color": HighLight[1], "background-color": BGColor[1]},
+                    ("Early Care and Education"),
+                    style={"color": HighLight[1], "background-color": BGColor[1]},
                     href="/dash-snapshot-report/child-care",
                     className="tab"
                 ),
                 dcc.Link(
-                    html.Strong("Demographics"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    html.Strong("Homevisiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    href="/dash-snapshot-report/homevisiting",
+                    className="tab",
+                    id='tab'
+                ),
+                dcc.Link(
+                    ("Demographics"), style={"color": HighLight[3], "background-color": BGColor[3]},
                     href="/dash-snapshot-report/demographic",
                     className="tab",
                     id='demoButton'
                 ),
                 dcc.Link(
-                    ("Language & Family"), style={"color": HighLight[3], "background-color": BGColor[3]},
+                    ("Language & Family"), style={"color": HighLight[4], "background-color": BGColor[4]},
                     href="/dash-snapshot-report/language-family",
                     className="tab",
                 ),
                 dcc.Link(
-                    ("Race/Ethnicity"), style={"color": HighLight[4], "background-color": BGColor[4]},
+                    ("Race/Ethnicity"), style={"color": HighLight[5], "background-color": BGColor[5]},
                     href="/dash-snapshot-report/race",
                     className="tab",
                 ),
                 dcc.Link(
-                    ("About"), style={"color": HighLight[5], "background-color": BGColor[5]},
+                    ("About"), style={"color": HighLight[6], "background-color": BGColor[6]},
                     href="/dash-snapshot-report/about",
                     className="tab",
                 ),
@@ -271,23 +290,29 @@ def get_menu(HighLight, BGColor, pageID):
                     className="tab"
                 ),
                 dcc.Link(
-                    ("Demographics"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    ("Homevisiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    href="/dash-snapshot-report/homevisiting",
+                    className="tab",
+                    id='tab'
+                ),
+                dcc.Link(
+                    html.Strong("Demographics"), style={"color": HighLight[3], "background-color": BGColor[3]},
                     href="/dash-snapshot-report/demographic",
                     className="tab",
                     id='demoButton'
                 ),
                 dcc.Link(
-                    html.Strong("Language & Family"), style={"color": HighLight[3], "background-color": BGColor[3]},
+                    ("Language & Family"), style={"color": HighLight[4], "background-color": BGColor[4]},
                     href="/dash-snapshot-report/language-family",
                     className="tab",
                 ),
                 dcc.Link(
-                    ("Race/Ethnicity"), style={"color": HighLight[4], "background-color": BGColor[4]},
+                    ("Race/Ethnicity"), style={"color": HighLight[5], "background-color": BGColor[5]},
                     href="/dash-snapshot-report/race",
                     className="tab",
                 ),
                 dcc.Link(
-                    ("About"), style={"color": HighLight[5], "background-color": BGColor[5]},
+                    ("About"), style={"color": HighLight[6], "background-color": BGColor[6]},
                     href="/dash-snapshot-report/about",
                     className="tab",
                 ),
@@ -308,23 +333,29 @@ def get_menu(HighLight, BGColor, pageID):
                     className="tab"
                 ),
                 dcc.Link(
-                    ("Demographics"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    ("Homevisiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    href="/dash-snapshot-report/homevisiting",
+                    className="tab",
+                    id='tab'
+                ),
+                dcc.Link(
+                    ("Demographics"), style={"color": HighLight[3], "background-color": BGColor[3]},
                     href="/dash-snapshot-report/demographic",
                     className="tab",
                     id='demoButton'
                 ),
                 dcc.Link(
-                    ("Language & Family"), style={"color": HighLight[3], "background-color": BGColor[3]},
+                    html.Strong("Language & Family"), style={"color": HighLight[4], "background-color": BGColor[4]},
                     href="/dash-snapshot-report/language-family",
                     className="tab",
                 ),
                 dcc.Link(
-                    html.Strong("Race/Ethnicity"), style={"color": HighLight[4], "background-color": BGColor[4]},
+                    ("Race/Ethnicity"), style={"color": HighLight[5], "background-color": BGColor[5]},
                     href="/dash-snapshot-report/race",
                     className="tab",
                 ),
                 dcc.Link(
-                    ("About"), style={"color": HighLight[5], "background-color": BGColor[5]},
+                    ("About"), style={"color": HighLight[6], "background-color": BGColor[6]},
                     href="/dash-snapshot-report/about",
                     className="tab",
                 ),
@@ -345,23 +376,72 @@ def get_menu(HighLight, BGColor, pageID):
                     className="tab"
                 ),
                 dcc.Link(
-                    ("Demographics"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    ("Homevisiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    href="/dash-snapshot-report/homevisiting",
+                    className="tab",
+                    id='tab'
+                ),
+                dcc.Link(
+                    ("Demographics"), style={"color": HighLight[3], "background-color": BGColor[3]},
                     href="/dash-snapshot-report/demographic",
                     className="tab",
                     id='demoButton'
                 ),
                 dcc.Link(
-                    ("Language & Family"), style={"color": HighLight[3], "background-color": BGColor[3]},
+                    ("Language & Family"), style={"color": HighLight[4], "background-color": BGColor[4]},
                     href="/dash-snapshot-report/language-family",
                     className="tab",
                 ),
                 dcc.Link(
-                    ("Race/Ethnicity"), style={"color": HighLight[4], "background-color": BGColor[4]},
+                    html.Strong("Race/Ethnicity"), style={"color": HighLight[5], "background-color": BGColor[5]},
                     href="/dash-snapshot-report/race",
                     className="tab",
                 ),
                 dcc.Link(
-                    html.Strong("About"), style={"color": HighLight[5], "background-color": BGColor[5]},
+                    ("About"), style={"color": HighLight[6], "background-color": BGColor[6]},
+                    href="/dash-snapshot-report/about",
+                    className="tab",
+                ),
+            ],
+            className="row all-tabs",
+        )
+    elif pageID == 7:
+        menu = html.Div(
+            [
+                dcc.Link(
+                    ("Overview"), style={"color": HighLight[0]},
+                    href="/dash-snapshot-report/overview",
+                    className="tab first",
+                ),
+                dcc.Link(
+                    ("Early Care and Education"), style={"color": HighLight[1], "background-color": BGColor[1]},
+                    href="/dash-snapshot-report/child-care",
+                    className="tab"
+                ),
+                dcc.Link(
+                    ("Homevisiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    href="/dash-snapshot-report/homevisiting",
+                    className="tab",
+                    id='tab'
+                ),
+                dcc.Link(
+                    ("Demographics"), style={"color": HighLight[3], "background-color": BGColor[3]},
+                    href="/dash-snapshot-report/demographic",
+                    className="tab",
+                    id='demoButton'
+                ),
+                dcc.Link(
+                    ("Language & Family"), style={"color": HighLight[4], "background-color": BGColor[4]},
+                    href="/dash-snapshot-report/language-family",
+                    className="tab",
+                ),
+                dcc.Link(
+                    ("Race/Ethnicity"), style={"color": HighLight[5], "background-color": BGColor[5]},
+                    href="/dash-snapshot-report/race",
+                    className="tab",
+                ),
+                dcc.Link(
+                    html.Strong("About"), style={"color": HighLight[6], "background-color": BGColor[6]},
                     href="/dash-snapshot-report/about",
                     className="tab",
                 ),

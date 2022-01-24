@@ -31,6 +31,7 @@ from pages import (
     LanguageFamily,
     ChildCare,
     ChildCareSlave,
+    Homevisiting,
     Race,
     About,
 )
@@ -250,6 +251,10 @@ def display_page(pathname, data):
             ChildCare.create_layout(app, region, region_code, view_style),
             ChildCareSlave.create_layout(app, region, region_code, view_style),
         )
+    elif pathname == "/dash-snapshot-report/homevisiting":
+        return (
+            Homevisiting.create_layout(app, region, region_code, view_style),
+        )
     elif pathname == "/dash-snapshot-report/race":
         return Race.create_layout(app, region, region_code, view_style)
     elif pathname == "/dash-snapshot-report/about":
@@ -261,6 +266,7 @@ def display_page(pathname, data):
             overview.create_layout(app, region, region_code, view_style_full),
             ChildCare.create_layout(app, region, region_code, view_style_full),
             ChildCareSlave.create_layout(app, region, region_code, view_style_full),
+            Homevisiting.create_layout(app, region, region_code, view_style_full),
             Demographic.create_layout(app, region, region_code, view_style_full),
             DemographicSlave.create_layout(app, region, region_code, view_style_full),
             LanguageFamily.create_layout(app, region, region_code, view_style_full),

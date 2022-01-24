@@ -685,7 +685,7 @@ def create_layout(app, region, region_code, view_style):
 
 
     ##########################################################################################################
-    pageID = 5
+    pageID = 6
 
     # get relative data folder
     PATH = pathlib.Path(__file__).parent
