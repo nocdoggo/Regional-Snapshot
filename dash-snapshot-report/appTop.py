@@ -159,7 +159,7 @@ landing_layout = html.Div([
             ),
             html.Div([
                 html.Img(id='display-image',
-                    src='', width=190,height=365
+                    src='/assets/IL_layout.png', width=190,height=365
                 ),
                 ],
                 className="three columns",
