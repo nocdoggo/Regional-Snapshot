@@ -160,7 +160,7 @@ def get_menu(HighLight, BGColor, pageID):
                     className="tab"
                 ),
                 dcc.Link(
-                    ("Homevisiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    ("Home Visiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
                     href="/dash-snapshot-report/homevisiting",
                     className="tab",
                     id='tab'
@@ -203,7 +203,7 @@ def get_menu(HighLight, BGColor, pageID):
                     className="tab"
                 ),
                 dcc.Link(
-                    ("Homevisiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    ("Home Visiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
                     href="/dash-snapshot-report/homevisiting",
                     className="tab",
                     id='tab'
@@ -247,7 +247,7 @@ def get_menu(HighLight, BGColor, pageID):
                     className="tab"
                 ),
                 dcc.Link(
-                    html.Strong("Homevisiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    html.Strong("Home Visiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
                     href="/dash-snapshot-report/homevisiting",
                     className="tab",
                     id='tab'
@@ -290,7 +290,7 @@ def get_menu(HighLight, BGColor, pageID):
                     className="tab"
                 ),
                 dcc.Link(
-                    ("Homevisiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    ("Home Visiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
                     href="/dash-snapshot-report/homevisiting",
                     className="tab",
                     id='tab'
@@ -333,7 +333,7 @@ def get_menu(HighLight, BGColor, pageID):
                     className="tab"
                 ),
                 dcc.Link(
-                    ("Homevisiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    ("Home Visiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
                     href="/dash-snapshot-report/homevisiting",
                     className="tab",
                     id='tab'
@@ -376,7 +376,7 @@ def get_menu(HighLight, BGColor, pageID):
                     className="tab"
                 ),
                 dcc.Link(
-                    ("Homevisiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    ("Home Visiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
                     href="/dash-snapshot-report/homevisiting",
                     className="tab",
                     id='tab'
@@ -419,7 +419,7 @@ def get_menu(HighLight, BGColor, pageID):
                     className="tab"
                 ),
                 dcc.Link(
-                    ("Homevisiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
+                    ("Home Visiting"), style={"color": HighLight[2], "background-color": BGColor[2]},
                     href="/dash-snapshot-report/homevisiting",
                     className="tab",
                     id='tab'

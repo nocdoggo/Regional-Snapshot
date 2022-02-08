@@ -207,6 +207,18 @@ li {
   margin: 25px 25px;
 }
 
+.large-logo {
+  height: 40px;
+  width: auto;
+  margin: 25px 25px;
+}
+
+.UIUC-logo {
+  height: 50px;
+  width: auto;
+  margin: 0px 25px 0px 0px;
+}
+
 a:link {
   color: #696969;
   text-decoration: none;
@@ -295,6 +307,10 @@ a:active {
   }
   .logo {
     height: 20px;
+    width: auto;
+  }
+  .large-logo {
+    height: 30px;
     width: auto;
   }
   #learn-more-button {

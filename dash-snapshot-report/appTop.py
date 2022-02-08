@@ -97,8 +97,8 @@ app.layout = html.Div(
 landing_layout = html.Div([
     html.Div([
         html.Img(
-            src=app.get_asset_url("IECAM_long_logo.png"),
-            className="logo",
+            src=app.get_asset_url("IECAM_Logo.png"),
+            className="large-logo",
         ),
         html.A(
             html.Button("Learn More", id="learn-more-button"),
@@ -114,12 +114,22 @@ landing_layout = html.Div([
     html.Div([
         html.Div([
             html.Hr(),
-            html.H5('Please select the type of region first from the radio buttons, then select the particular area within the dropdown list. You can type the name in the drop down list.', style={'font-size': '20px'}),
+            html.Div([
+                html.H5("How to use the application"),
+                html.Br([]),
+                html.P('Please select the type of region first from the radio buttons, \
+                    then select the particular area within the dropdown list. \
+                    You can type the name in the drop down list.',
+                    style={'font-size': '15px', "color": "#ffffff"},
+                    className = "row",
+                    ),
+                ],
+                className = "product"
+            ),
             ],
-            className = "row",  
+            className = "row"
         ),
         html.Div([
-            html.Hr(),
             html.Div([
                 dcc.RadioItems(
                 id='selection-type-radio',
@@ -159,7 +169,7 @@ landing_layout = html.Div([
         ),
         html.Div([
             html.Hr(),
-            html.Strong("Area I-A, Area I-B-C, and Area I-B-D for ROE are not available at the moment."),
+            html.Strong("Area I-A, Area I-B-C, and Area I-B-D for ROE are not available at the moment.", style={'font-size': '15px'}),
             ],
             className="row",
         ),
@@ -169,7 +179,19 @@ landing_layout = html.Div([
             className="row",
         ),
         html.Div([
-            html.P('The project was developed by IECAM at University of Illinois at Urbana-Champaign.')
+            html.Div([
+                html.Img(
+                src=app.get_asset_url("UIUC_logo.png"),
+                className="UIUC-logo",
+                ),
+                ],
+                className="three columns",
+            ),
+            html.Div([
+                html.P('The project was developed by IECAM at University of Illinois at Urbana-Champaign.', style={'font-size': '15px'})
+                ],
+                className = "nine columns"
+            ),
             ],
             className="row",
         ),
@@ -184,7 +206,7 @@ landing_layout = html.Div([
 app.config['suppress_callback_exceptions'] = True
 
 @app.callback(
-    Output('display-image', 'src'),
+    [Output('display-image', 'src')],
     [Input('selection-options', 'value')])
 def set_display_image(selected_code):
     if selected_code == None or selected_code == 0:
@@ -205,26 +227,26 @@ def set_selection_options(selected_type):
         return roe_options
 
 @app.callback([Output('url', 'pathname'),
-              Output('selected-region', 'data')],
+               Output('selected-region', 'data')],
               [Input('submit-button-state', 'n_clicks')],
               [State('selection-type-radio', 'value'),
-              State('selection-options', 'value')])
+               State('selection-options', 'value')])
 def update_output(n_clicks, type, selected_code):
     if n_clicks is None:
         raise PreventUpdate
     if selected_code == None or selected_code == 0:
-        data = {'code':0, 'region':"none"}
+        data = {'code': 0, 'region': "none"}
         return '/dash-snapshot-report/landing', data
 
     if type == 'County':
         region = df_CountyLib.loc[df_CountyLib['CountyID'] == selected_code].iloc[0]['CountyName']
-    #elif type == 'Region':
+    # elif type == 'Region':
     #    region = df_RegionLib.loc[df_RegionLib['RegionID'] == selected_code].iloc[0]['RegionName']
     elif type == 'ROE':
         region = df_ROELib.loc[df_ROELib['RegionID'] == selected_code].iloc[0]['ROEAreaName']
-    
-    #encode the region code and region and store it
-    data = {'code':selected_code, 'region':region}
+
+    # encode the region code and region and store it
+    data = {'code': selected_code, 'region': region}
     return '/dash-snapshot-report/overview', data
  
 # Update page
