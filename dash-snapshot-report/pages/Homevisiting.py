@@ -23,8 +23,8 @@ def create_layout(app, region, region_code, view_style):
 
     MAP_PATH = PATH.joinpath("../maps/" + str(region_code)).resolve()
 
-    site_image = MAP_PATH.joinpath("site_map.png")
-    site_base64 = base64.b64encode(open(site_image, 'rb').read()).decode('ascii')
+    # site_image = MAP_PATH.joinpath("site_map.png")
+    # site_base64 = base64.b64encode(open(site_image, 'rb').read()).decode('ascii')
 
     # Load data
 
@@ -42,6 +42,15 @@ def create_layout(app, region, region_code, view_style):
     df_HFI = pd.read_csv(DATA_PATH.joinpath(str(region_code) + "_HV.csv"), usecols=[0, 5])  # This includes HFI only
     df_PTS = pd.read_csv(DATA_PATH.joinpath(str(region_code) + "_HV.csv"), usecols=[0, 6])  # This includes Parent too soon only
     df_ALL = pd.read_csv(DATA_PATH.joinpath(str(region_code) + "_HV.csv"), usecols=[0, 1, 2, 3, 4, 5, 6, 7])  # This includes all data
+
+    # For the fuck sake, I don't wanna re-dump the files
+
+    df_ALL.at[0, '1'] = 'ISBE Prevention Initiative (PI)'
+    df_ALL.at[0, '2'] = 'Head Start (HS)'
+    df_ALL.at[0, '3'] = 'Early Head Start (EHS)'
+    df_ALL.at[0, '4'] = 'IDHS Maternal Infant and Early Childhood Home Visiting (MIECHV)'
+    df_ALL.at[0, '5'] = 'IDHS Healthy Families Illinois (HFI)'
+    df_ALL.at[0, '6'] = 'IDHS Parents Too Soon (PTS)'
 
     # Extract the fiscal year
     df_fiscal_year = pd.read_csv(DATA_PATH.joinpath(str(region_code) + "_Prog.csv"), usecols=[0])
@@ -96,10 +105,12 @@ def create_layout(app, region, region_code, view_style):
                     html.Div(
                         [
                             html.P(
-                                "Early childhood home visiting connects new and expectant parents\
-                                 with a family support specialist. The specialist may be a nurse, \
-                                 social worker, community health worker, or other early childhood \
-                                 professional.")
+                                "Home visiting provides family support and coaching through planned, \
+                                regular visits with a trained professional based on a family's needs and schedules. \
+                                Home visiting is a voluntary program, and home visitors work with parents on \
+                                practical parenting skills as well as family bonding before birth and as children \
+                                grow up. Through partnering with the home visitors, families learn how to improve \
+                                their family's health and provide better opportunities for their children.")
                         ],
                         className='row ',
                     ),
@@ -113,7 +124,7 @@ def create_layout(app, region, region_code, view_style):
                             html.Table(make_dash_table(df_ALL)),
 
                             html.Br([]),
-                            html.H6("* : Data is currently not available.")
+                            # html.H6("* : Data is currently not available.")
                         ],
                         className="row ",
                     ),
